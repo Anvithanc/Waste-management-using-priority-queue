@@ -1,0 +1,143 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the background color for the whole page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #68899c; /* Black background */
+  color: #f0f0f0; /* Light text color */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for the content */
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #1a1a1a; /* Dark grey background for the form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-height: 500px; /* Ensures enough space for content */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title style */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: green; /* Green color for the title */
+  margin-top: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Input field styles */
+input[type="text"], select {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  color: black;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+/* Focus effect for inputs */
+input[type="text"]:focus, select:focus {
+  border-color: #ff80ab; /* Light pink border on focus */
+  outline: none;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: pink; /* Light pink button */
+  color: #121212;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: darkred; /* Darker pink on hover */
+  transform: scale(1.05); /* Slightly grow the button */
+}
+
+button:disabled {
+  background-color:lightgreen;
+  cursor: not-allowed;
+}
+
+/* List of complaints */
+ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  text-align: left;
+  max-height: 300px; /* Limit the height of the complaints list */
+  overflow-y: auto; /* Add vertical scrolling */
+}
+
+ul li {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+ul li:hover {
+  background-color: #555;
+}
+
+ul li strong {
+  color: red; /* Light pink color for the description */
+  font-size: 1.1rem;
+}
+
+/* Heading styles */
+h2, h3 {
+  color: red; /* Light pink */
+  margin-bottom: 10px;
+}
+
+/* Add some space between sections */
+hr {
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input[type="text"], select, button {
+    font-size: 1rem;
+  }
+}

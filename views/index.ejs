@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Management System</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Waste Management System Mangalore</h1>
+
+    <!-- Form for Adding Complaints -->
+    <form action="/add-complaint" method="POST">
+      <label for="description">Complaint Description:</label>
+      <input type="text" id="description" name="description" required>
+      
+      <label for="priority">Priority Level:</label>
+      <select id="priority" name="priority" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <label for="area">Area:</label>
+      <input type="text" id="area" name="area" required>
+
+      <button type="submit">Submit Complaint</button>
+    </form>
+
+    <h2>Total Unresolved Complaints: <%= totalComplaints %></h2>
+
+    <h3>Unresolved Complaints:</h3>
+    <ul>
+      <% complaints.forEach(function(complaint, index) { %>
+        <li>
+          <strong><%= complaint.description %></strong><br>
+          Priority: <%= complaint.priority %><br>
+          Area: <%= complaint.area %>
+          <hr>
+        </li>
+      <% }) %>
+    </ul>
+
+    <!-- Single button to resolve the highest priority complaint -->
+    <form action="/resolve-complaint" method="POST">
+      <button type="submit" <% if (complaints.length === 0) { %> disabled <% } %>>Resolve Highest Priority Complaint</button>
+    </form>
+  </div>
+</body>
+</html>
